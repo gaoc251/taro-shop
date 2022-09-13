@@ -6,9 +6,8 @@ import './index.scss'
 interface stateType {
   userInfo: {
     avatarUrl: string // 头像
-    nickName: string
-  },
-  showGetUserInfo: boolean // 是否展示授权用户信息
+    nickName: string // 微信名称
+  }
 }
 
 export default class Index extends Component<any, stateType> {
@@ -19,14 +18,13 @@ export default class Index extends Component<any, stateType> {
         avatarUrl: '',
         nickName: ''
       }, 
-      showGetUserInfo: false
     }
   }
 
   componentWillMount () {
-    let userInfo = Taro.getStorageSync('userInfo')
+    let _userInfo = Taro.getStorageSync('userInfo')
     this.setState ({
-      showGetUserInfo: !Boolean(userInfo)
+      userInfo: _userInfo
     })
   }
 
@@ -85,11 +83,11 @@ export default class Index extends Component<any, stateType> {
   }
 
   render () {
-    const {userInfo, showGetUserInfo} = this.state
+    const {userInfo} = this.state
     return (
       <View className='user-info'>
-        <View className='login-btn' onClick={this.getLogin}>登录</View>
-        {showGetUserInfo && <View className='login-btn' onClick={this.getUserInfo.bind(this)}>获取用户信息</View>}
+        <View className='login-btn' onClick={this.getLogin}>登录：openid</View>
+        {!userInfo && <View className='login-btn' onClick={this.getUserInfo.bind(this)}>获取用户信息userInfo</View>}
         <View className='user-content'>
           <Image src={userInfo.avatarUrl}></Image>
           <View className=''>{userInfo.nickName}</View>
