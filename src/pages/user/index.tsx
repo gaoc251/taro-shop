@@ -1,11 +1,34 @@
 import { Component } from 'react'
 import Taro from '@tarojs/taro'
-import { View, Button } from '@tarojs/components'
+import { View, Button, Image } from '@tarojs/components'
 import './index.scss'
 
-export default class Index extends Component {
+interface stateType {
+  userInfo: {
+    avatarUrl: string // 头像
+    nickName: string
+  },
+  showGetUserInfo: boolean // 是否展示授权用户信息
+}
 
-  componentWillMount () { }
+export default class Index extends Component<any, stateType> {
+  constructor (props) {
+    super(props)
+    this.state = { // 用户信息
+      userInfo: {
+        avatarUrl: '',
+        nickName: ''
+      }, 
+      showGetUserInfo: false
+    }
+  }
+
+  componentWillMount () {
+    let userInfo = Taro.getStorageSync('userInfo')
+    this.setState ({
+      showGetUserInfo: !Boolean(userInfo)
+    })
+  }
 
   componentDidMount () { }
 
@@ -45,24 +68,32 @@ export default class Index extends Component {
 
   // 获取用户信息
   getUserInfo () {
-    Taro.getUserInfo({
-      success: function(res) {
-        console.log("res",res)
-      }
-    })
+    let self = this
     Taro.getUserProfile({
       desc: '用于完善会员资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
       success: (res) => {
         console.log("getUserProfile", res)
+        Taro.setStorage({
+          key: "userInfo",
+          data: res.userInfo
+        })
+        self.setState ({
+          userInfo: res.userInfo
+        })
       }
     })
   }
 
   render () {
+    const {userInfo, showGetUserInfo} = this.state
     return (
       <View className='user-info'>
         <View className='login-btn' onClick={this.getLogin}>登录</View>
-        <View className='login-btn' onClick={this.getUserInfo}>获取用户信息</View>
+        {showGetUserInfo && <View className='login-btn' onClick={this.getUserInfo.bind(this)}>获取用户信息</View>}
+        <View className='user-content'>
+          <Image src={userInfo.avatarUrl}></Image>
+          <View className=''>{userInfo.nickName}</View>
+        </View>
       </View>
     )
   }
