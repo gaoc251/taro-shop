@@ -1,3 +1,5 @@
+const path = require('path')
+
 const config = {
   projectName: 'demo',
   date: '2022-9-7',
@@ -59,6 +61,13 @@ const config = {
         }
       }
     }
+  },
+  alias: {
+    '@/components': path.resolve(__dirname, '..', 'src/components'),
+    // '@/utils': path.resolve(__dirname, '..', 'src/plugin/common/utils'),
+    // '@/env': path.resolve(__dirname, '..', 'src/plugin/common/ENV'),
+    // '@/SDK': path.resolve(__dirname, '..', 'src/plugin/common/SDK'),
+    // '@/api': path.resolve(__dirname, '..', 'src/plugin/common/data')
   }
 }
 

@@ -3,9 +3,6 @@ import { View, Text } from '@tarojs/components'
 import './index.scss'
 
 // 组件
-import HeaderImage from '@/components/HeaderImage/index'
-import Filter from '@/components/Filter'
-import List from '@/components/List'
 export default class Index extends Component {
 
   state = {
@@ -27,9 +24,7 @@ export default class Index extends Component {
     const { isFixTop } = this.state
     return (
       <View className='index'>
-        <HeaderImage isFixTop={ isFixTop }/>
-        <Filter />
-        <List />
+        添加商品
       </View>
     )
   }
