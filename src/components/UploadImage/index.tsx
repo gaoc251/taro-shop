@@ -68,6 +68,8 @@ export default class UploadImage extends Component<propType, stateType> {
           // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
           var tempFilePaths = res.tempFilePaths
 
+          console.log("tempFilePaths", tempFilePaths)
+
           // 图片压缩
           const tmpFiles = await that.compressfiles(res.tempFiles)
 
@@ -196,7 +198,7 @@ export default class UploadImage extends Component<propType, stateType> {
         return ImageUpload(data.url).then(res => {
           const resData = JSON.parse(res.data)
           if (resData.code === 0) {
-            data.url = resData.data.image.fileUrl
+            data.url = resData.data.fileUrl
             data.status = 'success'
             resolve(data)
           } else {
