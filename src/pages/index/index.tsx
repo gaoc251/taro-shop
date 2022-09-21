@@ -9,14 +9,17 @@ import Filter from '@/components/Filter'
 import List from '@/components/List'
 
 // 方法
-import {GetShopList} from './lib/GetShopList'
+import {GetMsgList} from './lib/GetMsgList'
 export default class Index extends Component {
 
   state = {
     isFixTop: false, // 是否吸顶，默认false
+    msgList: [], // 发布信息列表
   }
   componentWillMount () {
-    GetShopList ()
+    this.setState({
+      msgList:  GetMsgList ()
+    })
   }
 
   componentDidMount () { 
@@ -30,13 +33,13 @@ export default class Index extends Component {
   componentDidHide () { }
 
   render () {
-    const { isFixTop } = this.state
+    const { isFixTop, msgList } = this.state
     return (
       <View className='index'>
         <HeaderImage isFixTop={ isFixTop }/>
         <HomeIconConfig></HomeIconConfig>
         <Filter />
-        <List />
+        <List listData={msgList}/>
       </View>
     )
   }
