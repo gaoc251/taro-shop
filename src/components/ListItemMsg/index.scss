@@ -1,1 +1,38 @@
-.list-item-msg {}
+.list-item-msg {
+    border-bottom: 1rpx solid #EAEAEA;
+    .item-title {
+        font-family: PingFangSC-Medium;
+        font-size: 32rpx;
+        font-weight: 500;
+        line-height: 1;
+        color: rgba(0, 0, 0, 1);
+        text-align: left;
+        padding: 40rpx 0;
+    }
+    .item-pics {
+        display: flex;
+        .pic {
+            width: 240rpx;
+            height: 180rpx;
+            border-radius: 6rpx;
+            flex: 1;
+            margin-right: 10rpx;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+    .item-bottom {
+        font-family: PingFangSC-Light;
+        font-size: 26rpx;
+        font-weight: 300;
+        line-height: 1;
+        color: #333;
+        padding: 40rpx 0;
+        display: flex;
+        justify-content: space-between;
+        .click-info {
+        }
+        .publish-date {}
+    }
+}

@@ -5,8 +5,13 @@ import './index.scss'
 
 import ListItemMsg from '@/components/ListItemMsg'
 interface propType {
-  // isFixTop: boolean
-  listData: Array<[]>
+  listData: [{
+    title: string
+    pics: [string]
+    publish_time: string
+    click: string
+    userName: string
+  }]
 }
 export default class List extends Component<propType> {
 
@@ -22,11 +27,10 @@ export default class List extends Component<propType> {
 
   render () {
     const {listData} = this.props
-    console.log("this.props", this.props)
     return (
-      <View className='filter'>
+      <View className='list'>
         {listData && listData.map((item, index) => {
-          return <ListItemMsg item={item} />
+          return <ListItemMsg item={item} key={index} />
         })}
       </View>
     )
