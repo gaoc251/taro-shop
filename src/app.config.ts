@@ -2,7 +2,8 @@ export default {
   pages: [
     'pages/index/index',
     'pages/user/index',
-    'pages/addShop/index'
+    'pages/addShop/index',
+    'pages/infoList/index'
   ],
   window: {
     backgroundTextStyle: 'light',

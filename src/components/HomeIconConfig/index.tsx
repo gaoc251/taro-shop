@@ -22,7 +22,19 @@ export default class HomeIconConfig extends Component<propType> {
   componentDidHide () { }
 
   jumpUrl(item) {
-    debugger
+    /**
+     * 路由参数
+     * type: 
+     * contactUs：联系我们
+     * xiaoquQuestions：小区问答
+     * houseRent：房源出租
+     * shopTrends：商家动态
+     * jop：求职招聘
+     * erMarket：二手市场
+     */
+    Taro.redirectTo({
+      url: item.jumpAction
+    })
   }
 
   render () {
