@@ -37,7 +37,7 @@ export default class Index extends Component<any, stateType> {
 
   componentWillMount () {
     this.setState({
-      listData: GetList()
+      listData: GetList(this.state.routerParams.type)
     })
   }
 
