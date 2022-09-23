@@ -65,7 +65,7 @@ const config = {
   alias: {
     '@/components': path.resolve(__dirname, '..', 'src/components'),
     '@/utils': path.resolve(__dirname, '..', 'src/utils'),
-    // '@/env': path.resolve(__dirname, '..', 'src/plugin/common/ENV'),
+    '@/interface': path.resolve(__dirname, '..', 'src/interface'),
     // '@/SDK': path.resolve(__dirname, '..', 'src/plugin/common/SDK'),
     // '@/api': path.resolve(__dirname, '..', 'src/plugin/common/data')
   }

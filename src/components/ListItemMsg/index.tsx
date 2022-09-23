@@ -3,14 +3,9 @@ import { View, Image } from '@tarojs/components'
 import Taro from '@tarojs/taro'
 import './index.scss'
 
+import {ListDataItem} from '@/interface/listDataItem'
 interface propType {
-  item: {
-    title: string
-    pics: [string]
-    publish_time: string
-    click: string
-    userName: string
-  }
+  item: ListDataItem
 }
 export default class ListItemMsg extends Component<propType> {
 

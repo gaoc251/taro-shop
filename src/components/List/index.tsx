@@ -4,14 +4,11 @@ import Taro from '@tarojs/taro'
 import './index.scss'
 
 import ListItemMsg from '@/components/ListItemMsg'
+
+import {ListDataItem} from '@/interface/listDataItem'
+
 interface propType {
-  listData: [{
-    title: string
-    pics: [string]
-    publish_time: string
-    click: string
-    userName: string
-  }]
+  listData: ListDataItem[]
 }
 export default class List extends Component<propType> {
 

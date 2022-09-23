@@ -3,8 +3,18 @@ import Taro from '@tarojs/taro'
 import { View, } from '@tarojs/components'
 import './index.scss'
 
+// 组件
+import ListItemMsg from '@/components/ListItemMsg'
+
+// 方法
+import {GetList} from './lib/getList'
+
+// interface
+import {ListDataItem} from '@/interface/listDataItem'
+
 interface stateType {
   routerParams: any
+  listData: ListDataItem[]
 }
 
 let titleArr = {
@@ -21,10 +31,14 @@ export default class Index extends Component<any, stateType> {
     super(props)
     this.state = { 
       routerParams: Taro.getCurrentInstance().router?.params, // 路由参数
+      listData: []
     }
   }
 
   componentWillMount () {
+    this.setState({
+      listData: GetList()
+    })
   }
 
   componentDidMount () {
@@ -40,9 +54,13 @@ export default class Index extends Component<any, stateType> {
   componentDidHide () { }
 
   render () {
-    return (
-      <View className='es-market'>
-        {titleArr[this.state.routerParams.type]}
+    const {routerParams, listData} = this.state
+     return (
+      <View className='info-list'>
+        {titleArr[routerParams.type]}
+        {listData && listData.map((item, index) => {
+          return <ListItemMsg item={item} key={index}/>
+        })}
       </View>
     )
   }
