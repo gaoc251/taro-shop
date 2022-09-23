@@ -1,0 +1,23 @@
+.home-icons {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-flow: wrap;
+    text-align: center;
+    .icon-item {
+        width: 25%;
+        .icon-img {
+            width: 90rpx;
+            height: 90rpx;
+            display: block;
+            margin: 34rpx auto 0;
+        }
+        .icon-text {
+            font-size: 26rpx;
+            font-family: PingFangSC-Regular,PingFang SC,serif;
+            font-weight: 400;
+            color: #0b0f12;
+            margin-top: 10rpx;
+        }
+    }
+}

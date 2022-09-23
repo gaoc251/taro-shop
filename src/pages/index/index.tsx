@@ -10,15 +10,18 @@ import List from '@/components/List'
 
 // 方法
 import {GetMsgList} from './lib/GetMsgList'
+import {GetHomeIconsList} from './lib/GetHomeIconsList'
 export default class Index extends Component {
 
   state = {
     isFixTop: false, // 是否吸顶，默认false
     msgList: [], // 发布信息列表
+    homeIcons: [], // 首页icon配置
   }
   componentWillMount () {
     this.setState({
-      msgList:  GetMsgList ()
+      msgList:  GetMsgList (),
+      homeIcons: GetHomeIconsList ()
     })
   }
 
@@ -33,11 +36,11 @@ export default class Index extends Component {
   componentDidHide () { }
 
   render () {
-    const { isFixTop, msgList } = this.state
+    const { isFixTop, msgList, homeIcons } = this.state
     return (
       <View className='index'>
         <HeaderImage isFixTop={ isFixTop }/>
-        <HomeIconConfig></HomeIconConfig>
+        <HomeIconConfig iconConfig={homeIcons} />
         <Filter />
         <List listData={msgList}/>
       </View>

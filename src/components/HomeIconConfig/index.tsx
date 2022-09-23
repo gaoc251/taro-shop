@@ -1,10 +1,13 @@
 import { Component } from 'react'
-import { View, Swiper, SwiperItem } from '@tarojs/components'
+import { View, Image, Text } from '@tarojs/components'
 import Taro from '@tarojs/taro'
 import './index.scss'
-
 interface propType {
-  // isFixTop: boolean
+  iconConfig: [{
+    text: string
+    imgUrl: string
+    jumpAction: string
+  }]
 }
 export default class HomeIconConfig extends Component<propType> {
 
@@ -18,10 +21,20 @@ export default class HomeIconConfig extends Component<propType> {
 
   componentDidHide () { }
 
+  jumpUrl(item) {
+    debugger
+  }
+
   render () {
+    const { iconConfig } = this.props
     return (
-      <View className='filter'>
-        首页icon配置
+      <View className='home-icons'>
+        {iconConfig.map(item => {
+          return <View className='icon-item' onClick={this.jumpUrl.bind(this, item)}>
+            <Image className='icon-img' src={item.imgUrl} />
+            <Text className='icon-text'>{item.text}</Text>
+          </View>
+        })}
       </View>
     )
   }
