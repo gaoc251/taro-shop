@@ -2,12 +2,14 @@ import { Component } from 'react'
 import { View, Image, Text } from '@tarojs/components'
 import Taro from '@tarojs/taro'
 import './index.scss'
+
+class iconItem {
+  text: string
+  imgUrl: string
+  jumpAction: string
+}
 interface propType {
-  iconConfig: [{
-    text: string
-    imgUrl: string
-    jumpAction: string
-  }]
+  iconConfig: iconItem[]
 }
 export default class HomeIconConfig extends Component<propType> {
 

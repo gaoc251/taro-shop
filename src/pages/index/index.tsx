@@ -11,6 +11,8 @@ import List from '@/components/List'
 // 方法
 import {GetMsgList} from './lib/GetMsgList'
 import {GetHomeIconsList} from './lib/GetHomeIconsList'
+
+import ScrollBanner from '@/components/ScrollBanner'
 export default class Index extends Component {
 
   state = {
@@ -40,6 +42,7 @@ export default class Index extends Component {
     return (
       <View className='index'>
         <HeaderImage isFixTop={ isFixTop }/>
+        <ScrollBanner title={'hello！！！'} speed={80} space={80}/>
         <HomeIconConfig iconConfig={homeIcons} />
         <Filter />
         <List listData={msgList}/>
