@@ -27,7 +27,7 @@ export default class ListItemMsg extends Component<propType> {
         <View className='item-title'>{item.title}</View>
         <View className='item-pics'>
           {item.pics && item.pics.map(img => {
-            return <Image className='pic' src={img} />
+            return <Image className='pic' src={img} mode="aspectFill"/>
           })}
         </View>
         <View className='item-bottom'>
