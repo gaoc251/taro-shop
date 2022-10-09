@@ -5,12 +5,12 @@
  import Taro from "@tarojs/taro"
  import res from '../../../mockData/homeIcon.js'
  
- export function GetHomeIconsList() {
+ export function GetHomeIconsList(type) {
    let data = []
  
    const {code, msg} = res
    if (code == 0) {
-     data = res.data.icons
+     data = res.data[type]
    } else {
      Taro.showToast({
          title: msg,

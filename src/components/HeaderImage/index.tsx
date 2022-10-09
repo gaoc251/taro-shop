@@ -1,10 +1,10 @@
 import { Component } from 'react'
-import { View, Swiper, SwiperItem } from '@tarojs/components'
+import { View, Swiper, SwiperItem, Image } from '@tarojs/components'
 import Taro from '@tarojs/taro'
 import './index.scss'
 
 interface propType {
-    isFixTop: boolean
+  headImages: [string]
 }
 export default class HeaderImage extends Component<propType> {
 
@@ -29,24 +29,22 @@ export default class HeaderImage extends Component<propType> {
   componentDidHide () { }
 
   render () {
+    const {headImages} = this.props
     return (
       <View className='header-image'>
-        头图
         <Swiper className='swiper-header-image' id="swiper-header-image"
         indicatorColor='#999'
         indicatorActiveColor='#333'
         circular
         indicatorDots
         autoplay>
-        <SwiperItem>
-          <View className='demo-text-1'>1</View>
-        </SwiperItem>
-        <SwiperItem>
-          <View className='demo-text-2'>2</View>
-        </SwiperItem>
-        <SwiperItem>
-          <View className='demo-text-3'>3</View>
-        </SwiperItem>
+
+        {headImages && headImages.map(item => {
+          return <SwiperItem>
+            <Image className='image' src={item} mode="scaleToFill"/>
+          </SwiperItem>
+        })}
+        
       </Swiper>
       </View>
     )

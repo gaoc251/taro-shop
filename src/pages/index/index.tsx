@@ -21,13 +21,15 @@ export default class Index extends Component {
     isFixTop: false, // 是否吸顶，默认false
     msgList: [], // 发布信息列表
     homeIcons: [], // 首页icon配置
+    headImages:[], // 头图
     filterTop: 0, // 筛选模块距顶部距离
     filterFixTop: false, // 筛选项吸顶吗
   }
   componentWillMount () {
     this.setState({
       msgList:  GetMsgList (),
-      homeIcons: GetHomeIconsList ()
+      homeIcons: GetHomeIconsList ('icons'),
+      headImages: GetHomeIconsList ('headImages')
     })
   }
 
@@ -35,7 +37,6 @@ export default class Index extends Component {
     // 计算筛选模块距离顶部高度
     Taro.nextTick(() => {
       Taro.createSelectorQuery().select('#filter-container') .boundingClientRect(res=> { 
-        console.log("qwwwwww", res)
         this.setState({
           filterTop: res.top
         })
@@ -58,7 +59,7 @@ export default class Index extends Component {
   }
 
   render () {
-    const { isFixTop, msgList, homeIcons, filterFixTop } = this.state
+    const { isFixTop, msgList, homeIcons, filterFixTop, headImages } = this.state
     return (
       <ScrollView 
         className='index' 
@@ -66,7 +67,7 @@ export default class Index extends Component {
         scrollWithAnimation
         onScroll={this.handleScroll.bind(this)}
       >
-        <HeaderImage isFixTop={ isFixTop }/>
+        <HeaderImage headImages={headImages}/>
         <ScrollBanner title={'hello！！！'} speed={80} space={80}/>
         <HomeIconConfig iconConfig={homeIcons} />
 
