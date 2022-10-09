@@ -1,0 +1,10 @@
+.index {
+    height: 100vh;
+    .filter-container {
+        &.fixed {
+            position: fixed;
+            top: 0;
+        }
+        &.static {}
+    }
+}
