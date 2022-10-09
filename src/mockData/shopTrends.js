@@ -6,7 +6,7 @@ export default {
         "publish_time": "昨天18:18",
         "title": " 税源地直接出电子发票",
         "userId": "2175",
-        "userName": "咄咄茶",
+        "user_name": "咄咄茶",
         "pics": [
             'https://magimgs.bjxiangsu.com/pic/20220922/1663841904258006744.jpg',
             'https://magimgs.bjxiangsu.com/pic/20220922/1663841904260808456.jpg',

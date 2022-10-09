@@ -36,7 +36,7 @@ export default class ListItemMsg extends Component<propType> {
           })}
         </View>
         <View className='item-bottom'>
-          <View className='click-info'>{item.userName}-{item.click}阅读</View>
+          <View className='click-info'>{item.user_name}-{item.click}阅读</View>
           <View className='publish-date'>{item.publish_time}</View>
         </View>
       </View>

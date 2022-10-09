@@ -5,7 +5,7 @@ export default {
         id: 0,
         title: '求租南区车位',
         user: {
-            userName: '黄先生',
+            user_name: '黄先生',
             publish_time: "昨天15:03",
         },
         infos: {

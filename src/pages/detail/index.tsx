@@ -11,7 +11,7 @@ interface stateType {
   detailData: {
     title?: string
     user?: {
-      userName: string
+      user_name: string
       publish_time: string
     }
     infos?: {
@@ -55,7 +55,7 @@ export default class Detail extends Component<any, stateType> {
         
         <View className='title'>{detailData.title}</View>
         <View className='user'>
-          <View className='name'>{detailData.user?.userName}</View>
+          <View className='name'>{detailData.user?.user_name}</View>
           <View className='pb-time'>{detailData.user?.publish_time}</View>
         </View>
         <View className='info'>

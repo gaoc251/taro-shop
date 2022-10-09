@@ -7,5 +7,5 @@ export class ListDataItem {
     pics: [string]
     publish_time: string
     click: string
-    userName: string
+    user_name: string
 }
