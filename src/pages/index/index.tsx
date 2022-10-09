@@ -35,13 +35,13 @@ export default class Index extends Component {
 
   componentDidMount () { 
     // 计算筛选模块距离顶部高度
-    Taro.nextTick(() => {
-      Taro.createSelectorQuery().select('#filter-container') .boundingClientRect(res=> { 
-        this.setState({
-          filterTop: res.top
-        })
-      }).exec()
-    })
+    // Taro.nextTick(() => {
+    //   Taro.createSelectorQuery().select('#filter-container') .boundingClientRect(res=> { 
+    //     this.setState({
+    //       filterTop: res.top
+    //     })
+    //   }).exec()
+    // })
   }
 
   componentWillUnmount () { }
@@ -71,9 +71,9 @@ export default class Index extends Component {
         <ScrollBanner title={'hello！！！'} speed={80} space={80}/>
         <HomeIconConfig iconConfig={homeIcons} />
 
-        <View id='filter-container' className={classNames('filter-container', filterFixTop?'fixed':'static')}>
+        {/* <View id='filter-container' className={classNames('filter-container', filterFixTop?'fixed':'static')}>
           <Filter />
-        </View>
+        </View> */}
         
         <List listData={msgList}/>
       </ScrollView>

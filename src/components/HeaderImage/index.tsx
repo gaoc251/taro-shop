@@ -41,10 +41,10 @@ export default class HeaderImage extends Component<propType> {
 
         {headImages && headImages.map(item => {
           return <SwiperItem>
-            <Image className='image' src={item} mode="scaleToFill"/>
+            <Image className='image' src={item} mode="scaleToFill" lazyLoad/>
           </SwiperItem>
         })}
-        
+
       </Swiper>
       </View>
     )

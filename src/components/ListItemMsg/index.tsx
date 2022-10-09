@@ -19,11 +19,16 @@ export default class ListItemMsg extends Component<propType> {
 
   componentDidHide () { }
 
+  jumpDetail (item) {
+    Taro.redirectTo({
+      url: `../../pages/detail/index?infoId=${item.id}`
+    })
+  }
+
   render () {
     const { item } = this.props
-    console.log("item", item)
     return (
-      <View className='list-item-msg'>
+      <View className='list-item-msg' onClick={this.jumpDetail.bind(this, item)}>
         <View className='item-title'>{item.title}</View>
         <View className='item-pics'>
           {item.pics && item.pics.map(img => {

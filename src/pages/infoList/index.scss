@@ -1,3 +1,15 @@
 .info-list {
     padding: 0 40rpx;
+    .filter-type {
+        display: flex;
+        .item {
+            flex: 1;
+            text-align: center;
+            line-height: 70rpx;
+            border-radius: 8rpx;
+            &.active {
+                background: antiquewhite;
+            }
+        }
+    }
 }

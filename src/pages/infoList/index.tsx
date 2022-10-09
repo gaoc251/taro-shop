@@ -2,6 +2,7 @@ import { Component } from 'react'
 import Taro from '@tarojs/taro'
 import { View, } from '@tarojs/components'
 import './index.scss'
+import classNames from 'classnames'
 
 // 组件
 import ListItemMsg from '@/components/ListItemMsg'
@@ -15,6 +16,7 @@ import {ListDataItem} from '@/interface/listDataItem'
 interface stateType {
   routerParams: any
   listData: ListDataItem[]
+  activeIndex: number 
 }
 
 let titleArr = {
@@ -26,12 +28,27 @@ let titleArr = {
   contactUs: '联系我们'
 }
 
+let filterType = {
+  //
+  erMarket: [{
+    text: '全部',
+    key: '0'
+  }, {
+    text: '出售',
+    key: '1'
+  }, {
+    text: '求购',
+    key: '2'
+  }]
+}
+
 export default class Index extends Component<any, stateType> {
   constructor (props) {
     super(props)
     this.state = { 
       routerParams: Taro.getCurrentInstance().router?.params, // 路由参数
-      listData: []
+      listData: [],
+      activeIndex: 0 // tab选项索引
     }
   }
 
@@ -53,11 +70,24 @@ export default class Index extends Component<any, stateType> {
 
   componentDidHide () { }
 
+  // 切换tab
+  changeIndex (index) {
+    this.setState({
+      activeIndex: index
+    })
+  }
+
   render () {
-    const {routerParams, listData} = this.state
+    const {routerParams, listData, activeIndex} = this.state
      return (
       <View className='info-list'>
         {titleArr[routerParams.type]}
+        <View className='filter-type'>
+          {filterType[routerParams.type].map((item, index) => {
+            return <View className={classNames('item', activeIndex == index?'active':'')} key={item} onClick={this.changeIndex.bind(this, index)}>{item.text}</View>
+          })}
+        </View>
+        
         {listData && listData.map((item, index) => {
           return <ListItemMsg item={item} key={index}/>
         })}
