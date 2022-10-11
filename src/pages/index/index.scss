@@ -1,5 +1,16 @@
 .index {
     height: 100vh;
+    .top-bg {
+        background: linear-gradient(#3696f4, #fff);
+        height: 226rpx;
+        .local-icon {
+            width: 18rpx;
+            height: 18rpx;
+        }
+    }
+    .head-image-wrap {
+        margin-top: -150rpx;
+    }
     .filter-container {
         &.fixed {
             position: fixed;

@@ -28,9 +28,9 @@ export default {
                 "jumpAction": "../../pages/infoList/index?type=contactUs"
             }],
         headImages: [
-            'https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/259a935874bf4aa49444f6ecbcf1a8db~tplv-k3u1fbpfcp-zoom-crop-mark:3024:3024:3024:1702.awebp?',
-            'https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9e14af9133014c42b60d2670e99ca3cd~tplv-k3u1fbpfcp-zoom-crop-mark:3024:3024:3024:1702.awebp?',
-            'https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/aa5d4bd5d3034410875ccfe76fb0125f~tplv-k3u1fbpfcp-zoom-crop-mark:3024:3024:3024:1702.awebp?'
+            'https://chuantu.xyz/t6/742/1665479804x2890211636.png',
+            'http://chuantu.xyz/t6/742/1665479847x2890323562.png',
+            'http://chuantu.xyz/t6/742/1665479863x2890323562.png'
         ]
     }
 }

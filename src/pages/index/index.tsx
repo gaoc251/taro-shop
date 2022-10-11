@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import { View, ScrollView } from '@tarojs/components'
+import { View, Image } from '@tarojs/components'
 import './index.scss'
 import Taro from '@tarojs/taro'
 import classNames from 'classnames'
@@ -61,13 +61,14 @@ export default class Index extends Component {
   render () {
     const { isFixTop, msgList, homeIcons, filterFixTop, headImages } = this.state
     return (
-      <ScrollView 
-        className='index' 
-        scrollY
-        scrollWithAnimation
-        onScroll={this.handleScroll.bind(this)}
-      >
-        <HeaderImage headImages={headImages}/>
+      <View className='index'>
+        <View className='top-bg'>
+          <Image className='local-icon' src="../../asset/image/local.png"/>
+          万橡悦府一期
+        </View>
+        <View className='head-image-wrap'>
+          <HeaderImage headImages={headImages}/>
+        </View>
         <ScrollBanner title={'hello！！！'} speed={80} space={80}/>
         <HomeIconConfig iconConfig={homeIcons} />
 
@@ -76,7 +77,7 @@ export default class Index extends Component {
         </View> */}
         
         <List listData={msgList}/>
-      </ScrollView>
+      </View>
     )
   }
 }
