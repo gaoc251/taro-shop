@@ -11,11 +11,4 @@
     .head-image-wrap {
         margin-top: -150rpx;
     }
-    .filter-container {
-        &.fixed {
-            position: fixed;
-            top: 0;
-        }
-        &.static {}
-    }
 }
