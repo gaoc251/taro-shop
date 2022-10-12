@@ -28,9 +28,10 @@ export default {
                 "jumpAction": "../../pages/infoList/index?type=contactUs"
             }],
         headImages: [
-            'https://chuantu.xyz/t6/742/1665479804x2890211636.png',
-            'http://chuantu.xyz/t6/742/1665479847x2890323562.png',
-            'http://chuantu.xyz/t6/742/1665479863x2890323562.png'
+            'https://i.postimg.cc/qM9yJXzk/image.png'
+            // 'https://chuantu.xyz/t6/742/1665479804x2890211636.png',
+            // 'http://chuantu.xyz/t6/742/1665479847x2890323562.png',
+            // 'http://chuantu.xyz/t6/742/1665479863x2890323562.png'
         ]
     }
 }

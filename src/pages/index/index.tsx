@@ -15,6 +15,9 @@ import {GetMsgList} from './lib/GetMsgList'
 import {GetHomeIconsList} from './lib/GetHomeIconsList'
 
 import ScrollBanner from '@/components/ScrollBanner'
+
+
+import localIcon from '../../asset/image/local.png'
 export default class Index extends Component {
 
   state = {
@@ -55,13 +58,14 @@ export default class Index extends Component {
     return (
       <View className='index'>
         <View className='top-bg'>
-          <Image className='local-icon' src="../../asset/image/local.png"/>
-          万橡悦府一期
+          <Image className='local-icon' src={localIcon}/>
+          <View className='xiaoqu-name'>xxxx</View>
         </View>
         <View className='head-image-wrap'>
           <HeaderImage headImages={headImages}/>
         </View>
         <ScrollBanner title={'hello！！！'} speed={80} space={80}/>
+        <View className='title'>智慧社区</View>
         <HomeIconConfig iconConfig={homeIcons} />
         
         <List listData={msgList}/>
