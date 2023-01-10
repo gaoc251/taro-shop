@@ -71,8 +71,8 @@ export default class UploadImage extends Component<propType, stateType> {
           console.log("tempFilePaths", tempFilePaths)
 
           // 图片压缩
-          const tmpFiles = await that.compressfiles(res.tempFiles)
-
+          const tmpFiles:any = await that.compressfiles(res.tempFiles)
+          
           /// 将选中的图片存在files中 
           var tmpFileList = tmpFiles.map(file => {
             return {
@@ -167,8 +167,7 @@ export default class UploadImage extends Component<propType, stateType> {
 
 
   /// 图片压缩
-  compressfiles = async (uploadFiles = []) => {
-    let that = this
+  compressfiles = async (uploadFiles = [{path: '', size: 0}]) => {
     let files = []
     const count = uploadFiles?.length || 0
     Taro.showLoading({
@@ -195,6 +194,7 @@ export default class UploadImage extends Component<propType, stateType> {
   uploadFile = async (uploadFiles = []) => {
     const promises = uploadFiles.map( data => {
       return new Promise((resolve, reject) => {
+        debugger
         return ImageUpload(data.url).then(res => {
           const resData = JSON.parse(res.data)
           if (resData.code === 0) {
