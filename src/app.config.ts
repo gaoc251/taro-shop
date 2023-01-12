@@ -4,7 +4,8 @@ export default {
     'pages/user/index',
     'pages/addShop/index',
     'pages/infoList/index',
-    'pages/detail/index'
+    'pages/detail/index',
+    'pages/demoComponents/index'
   ],
   window: {
     backgroundTextStyle: 'light',
@@ -30,6 +31,12 @@ export default {
     },{
       pagePath: 'pages/user/index',
       text: '我的',
+      iconPath: "./asset/image/user.png",
+      selectedIconPath: "./asset/image/user_selected.png",
+    },
+    {
+      pagePath: 'pages/demoComponents/index',
+      text: '公共组件',
       iconPath: "./asset/image/user.png",
       selectedIconPath: "./asset/image/user_selected.png",
     }]
