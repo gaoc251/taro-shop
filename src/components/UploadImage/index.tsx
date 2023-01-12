@@ -8,10 +8,12 @@ import {ImageUpload} from '../../services/ImageUpload'
 interface propType {
   files: File[]
   maxCount: string
+  onFileChange: any
 }
 interface File {
   url: string
   isDefault?: boolean | undefined
+  isAdd: boolean
 }
 interface stateType {
   backData: string
@@ -81,7 +83,8 @@ export default class UploadImage extends Component<propType, stateType> {
           })
 
           /// 发起网络请求 将tag有值的数据进行上传 如果上传成功则移除tag值
-          const successFiles = await (await that.uploadFile(tmpFileList)).filter(item => item.status === 'success').map(item => {
+          let successFiles: any
+          successFiles = await (await that.uploadFile(tmpFileList)).filter((item:any) => item.status === 'success').map((item: any) => {
             delete item.status
             delete item.tag
             return item
@@ -168,7 +171,7 @@ export default class UploadImage extends Component<propType, stateType> {
 
   /// 图片压缩
   compressfiles = async (uploadFiles = [{path: '', size: 0}]) => {
-    let files = []
+    let files: Array<any> = []
     const count = uploadFiles?.length || 0
     Taro.showLoading({
       title: '图片压缩中'
@@ -177,7 +180,7 @@ export default class UploadImage extends Component<propType, stateType> {
     return new Promise(async (resolve, reject) => {
       for (let index = 0; index < count; index++) {
         const file = uploadFiles[index]
-        const res = await this.compressfile(file)
+        const res:any = await this.compressfile(file)
         console.log(index)
         files.push(res)
         if (index === count - 1) {
@@ -192,9 +195,8 @@ export default class UploadImage extends Component<propType, stateType> {
 
   // 发起图片上传 异步上传
   uploadFile = async (uploadFiles = []) => {
-    const promises = uploadFiles.map( data => {
+    const promises = uploadFiles.map( (data:any) => {
       return new Promise((resolve, reject) => {
-        debugger
         return ImageUpload(data.url).then(res => {
           const resData = JSON.parse(res.data)
           if (resData.code === 0) {
@@ -236,7 +238,7 @@ export default class UploadImage extends Component<propType, stateType> {
       ///1.拿到已经选中的file列表
       let { files, maxCount, mode } = this.state
       ///2.移除之前的addFile 
-      const newFiles = files.filter((item, index) => {
+      const newFiles = files.filter((item: any) => {
         return item.isAdd !== true
       })
 
