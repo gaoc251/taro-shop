@@ -1,1 +1,13 @@
-.request-fail {}
+.request-fail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .fail {
+        font-size: 240rpx;
+        margin-bottom: 40rpx;
+    }
+    .font {
+        font-family: 'PingFangSC-Regular';
+        font-weight: 400;
+    }
+}

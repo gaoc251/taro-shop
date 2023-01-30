@@ -1,7 +1,9 @@
 import { Component } from 'react'
 import Taro from '@tarojs/taro'
-import { View, Button, Image } from '@tarojs/components'
+import { View } from '@tarojs/components'
 import './index.scss'
+
+import RequestFail from '@/components/common/RequestFial'
 
 interface stateType {
   
@@ -30,8 +32,8 @@ export default class Demo extends Component<any, stateType> {
   render () {
     return (
       <View className='demo'>
-        坎坎坷坷
-        <View className='iconfont icon-taro-WIFI'></View>
+        网络异常
+        <RequestFail />
       </View>
     )
   }
