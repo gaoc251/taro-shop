@@ -41,7 +41,7 @@ export default class CateList extends Component<propType> {
                         )}
                         onClick={this.handleClick.bind(this, item)}
                         >
-                        <Image className='cate-list__item-img' src={item.bannerUrl} />
+                        <Image className='cate-list__item-img' src={item.bannerUrl} lazyLoad/>
                         <View className='cate-list__item-txt-wrap'>
                             <Text className='cate-list__item-txt'>{item.name}</Text>
                         </View>

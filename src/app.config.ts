@@ -7,6 +7,7 @@ export default {
     'pages/detail/index',
     'pages/demoComponents/index',
     'pages/cate/index',
+    'pages/detailGoods/index'
   ],
   window: {
     backgroundTextStyle: 'light',
