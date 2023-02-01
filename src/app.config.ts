@@ -5,13 +5,14 @@ export default {
     'pages/addShop/index',
     'pages/infoList/index',
     'pages/detail/index',
-    'pages/demoComponents/index'
+    'pages/demoComponents/index',
+    'pages/cate/index',
   ],
   window: {
     backgroundTextStyle: 'light',
-    navigationBarBackgroundColor: '#3696f4',
+    navigationBarBackgroundColor: '#fff',
     navigationBarTitleText: '智慧社区',
-    navigationBarTextStyle: 'white'
+    navigationBarTextStyle: 'black'
   },
   tabBar: {
     color: 'rgba(0, 0, 0, 0.6)',
