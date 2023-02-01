@@ -6,11 +6,14 @@
  import menu from '../../../mockData/cate'
  
  export function GetMenu(type) {
-     let data = []
+     let data = {}
      let res = menu
      const {code, msg} = res
      if (code == 0) {
-        data = translateData(res.data.categoryList)
+        data = {
+            menu: translateData(res.data.categoryList),
+            categoryList: res.data.categoryList
+        }
      } else {
          Taro.showToast({
              title: msg,

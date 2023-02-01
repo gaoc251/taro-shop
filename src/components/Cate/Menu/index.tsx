@@ -10,7 +10,7 @@ interface propType {
     onClick: any
   }
 
-export default class Menu extends Component<propType> {
+export default class CateMenu extends Component<propType> {
     static defaultProps = {
         list: [],
         current: -1,
