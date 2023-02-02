@@ -80,7 +80,6 @@ export default {
           "schemeUrl": null
         },
         "promForbiddenDesc": null,
-        "tagList": null,
         "pointsTip": "购买最高得76积分",
         "spmcBanner": null,
         "itemRewardVO": null,
@@ -1143,7 +1142,7 @@ export default {
     "retailPrice": "769",
     "activityPrice": "489",
     "itemStar": {
-      "goodCmtRate": "查看全部",
+      "goodCmtRate": "90",
       "star": null
     },
     "pointsTip": "购买最高得63积分",
