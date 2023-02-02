@@ -31,7 +31,7 @@ export default class InfoBase extends Component<propType> {
 
     render () {
         const { itemInfo } = this.props
-        const { itemStar, tagList } = itemInfo
+        const { itemStar } = itemInfo
         return (
             <View className='item-info-base'>
                 <View className='item-info-base__header'>

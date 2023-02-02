@@ -5,6 +5,8 @@ import './index.scss'
 
 // 组件
 import InfoBase from '@/components/DetailGoods/InfoBase'
+import InfoParam from '@/components/DetailGoods/InfoParam'
+import HeaderImage from '@/components/DetailGoods/HeaderImage'
 
 // 方法
 import { getWindowHeight } from '@/utils/style'
@@ -38,16 +40,14 @@ export default class DetailGoods extends Component {
     
     return (
       <View className='detail-goods'>
-       sssss
        <ScrollView
           scrollY
           className='item__wrap'
           style={{ height }}
         >
-          {/* <Gallery list={gallery} /> */}
+          <HeaderImage imgList={itemInfo.imgList} />
           <InfoBase itemInfo={itemInfo} />
-          {/* <InfoParam list={itemInfo.attrList} /> */}
-          {/* <Detail html={itemDetail.detailHtml} /> */}
+          <InfoParam attrList={itemInfo.attrList} />
         </ScrollView>
 
         {/* NOTE Popup 一般的实现是 fixed 定位，但 RN 不支持，只能用 absolute，要注意引入位置 */}
