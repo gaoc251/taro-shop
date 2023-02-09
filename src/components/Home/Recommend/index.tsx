@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import { View, Text, Image } from '@tarojs/components'
-
+import Taro from '@tarojs/taro'
 import classNames from 'classnames'
 import './index.scss'
 
@@ -15,8 +15,10 @@ export default class Recommend extends Component<propType> {
         list: []
     }
 
-    handleClick = ()=>{
-        debugger
+    handleClick = (item)=>{
+        Taro.navigateTo({
+            url: `../../pages/detailGoods/index?id=${item.id}`
+        })
     }
 
     render () {
@@ -32,7 +34,7 @@ export default class Recommend extends Component<propType> {
                         return (<View 
                             key={id}
                             className='home-recommend__list-item'
-                            onClick={this.handleClick.bind(this, id)}>
+                            onClick={this.handleClick.bind(this, item)}>
                                 <Image className='home-recommend__list-item-img' src={categoryItem.listPicUrl} />
                                 {!!categoryItem.simpleDesc && !categoryItem.simpleDescClose &&
                                     <Text className='home-recommend__list-item-desc' numberOfLines={1}>

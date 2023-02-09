@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import { View, Text, Image, Swiper, SwiperItem } from '@tarojs/components'
-
+import Taro from '@tarojs/taro'
 import classNames from 'classnames'
 import './index.scss'
 
@@ -15,8 +15,10 @@ export default class Pintuan extends Component<propType> {
         list: []
     }
 
-    handleClick = ()=>{
-        debugger
+    handleClick = (item)=>{
+        Taro.navigateTo({
+            url: `../../pages/detailGoods/index?id=${item.id}`
+        })
     }
 
     render () {
@@ -26,18 +28,9 @@ export default class Pintuan extends Component<propType> {
             <View className='home-pin'>
                 <View className='home-pin__wrap'>
                     <Title title='免邮拼团' link='#'/>
-                <Swiper
-                    className='home-pin__swiper'
-                    autoplay
-                    indicatorDots
-                    indicatorActiveColor='rgb(178, 42, 49)'
-                >
-                    {list.map((item, index) => (
-                        <SwiperItem
-                            key={index}
-                            className='home-pin__swiper-item'
-                        >
-                            <View key={item.id} className='home-pin__item'>
+                    <View className='home-pin__content'>
+                        {list.map((item, index)=>{
+                            return <View key={item.id} className='home-pin__item'onClick={this.handleClick.bind(this, item)}>
                                 <Image
                                 className='home-pin__item-img'
                                 src={item.picUrl}
@@ -48,11 +41,11 @@ export default class Pintuan extends Component<propType> {
                                 </View>
                                 <View className='home-pin__item-num'>
                                 <Text className='home-pin__item-num-txt'>{item.userNum}人团</Text>
-                                </View>
                             </View>
-                        </SwiperItem>
-                    ))}
-                </Swiper>
+                        </View>
+                        })}
+                    </View>
+
                 </View>
             </View>
         )

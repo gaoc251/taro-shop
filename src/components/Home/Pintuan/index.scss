@@ -10,14 +10,9 @@
   overflow: hidden;
 
   @include eject(margin, 0);
-  @include eject(height, 340px);
-}
+  @include eject(height, 380px);
 
-.home-pin__swiper {
-  // NOTE RN 的 Swiper 需要有高度，否则会报错
-  height: 330px;
-
-  &-item {
+  .home-pin__content {
     display: flex;
     flex-direction: row;
   }
@@ -81,6 +76,7 @@
     }
   }
 }
+
 
 
 
