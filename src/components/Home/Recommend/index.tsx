@@ -21,7 +21,6 @@ export default class Recommend extends Component<propType> {
 
     render () {
         const { list } = this.props
-        console.log("list", list)
         return (
             <View className='home-recommend'>
                 <View className='home-recommend__title'>
@@ -29,7 +28,6 @@ export default class Recommend extends Component<propType> {
                 </View>
                 <View className='home-recommend__list'>
                     { list.map((item) => {
-                        console.log("item", item)
                         const {categoryItem, id} = item
                         return (<View 
                             key={id}
