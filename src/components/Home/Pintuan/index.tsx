@@ -23,7 +23,6 @@ export default class Pintuan extends Component<propType> {
 
     render () {
         const { list } = this.props
-        console.log("list", list)
         return (
             <View className='home-pin'>
                 <View className='home-pin__wrap'>

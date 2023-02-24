@@ -1,0 +1,30 @@
+@import "../../../asset/style/theme.scss";
+
+.home-icon-config {
+  padding: 0 30px;
+  background: #ffffff;
+}
+.home-icon-config__item {
+  display: block;
+  width: 116px;
+  height: 160px;
+  float: left;
+  margin: 10px 20px;
+  &-img {
+    height: 116px;
+    width: 116px;
+  }
+  &-txt {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+}
+
+
+
+
+
