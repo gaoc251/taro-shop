@@ -50,7 +50,7 @@ export default class Home extends Component {
           style={{ height: height }}
         >
           {/* 图标 */}
-          {/* <IconConfig list={iconConfig}/> */}
+          <IconConfig list={iconConfig}/>
           {/* 拼团 */}
           <Pintuan list={pintuanList}/>
           {/* 为你推荐 */}
