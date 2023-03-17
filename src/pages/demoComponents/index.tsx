@@ -3,7 +3,9 @@ import Taro from '@tarojs/taro'
 import { View } from '@tarojs/components'
 import './index.scss'
 
-import RequestFail from '@/components/common/RequestFial'
+import RequestFail from '@/components/common/RequestFial' // 请求失败
+import AnimateLeftDel from '@/components/AnimateLeftDel'
+
 
 interface stateType {
   
@@ -34,6 +36,8 @@ export default class Demo extends Component<any, stateType> {
       <View className='demo'>
         网络异常
         <RequestFail />
+        左滑删除
+        <AnimateLeftDel />
       </View>
     )
   }

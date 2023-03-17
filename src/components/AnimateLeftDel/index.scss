@@ -1,0 +1,28 @@
+.animate-left-del {
+    
+}
+.animate-left-del__item {
+    width: 100%;
+    height: 100rpx;
+    position: relative;
+    &-del {
+        width: 160rpx;
+        height: 100rpx;
+        font-size: 28rpx;
+        color: white;
+        text-align: center;
+        background: red;
+    }
+    .right {
+        float: right;
+    }
+    &-cover {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100rpx;
+        background: white;
+        border: 2rpx solid white;
+    }
+}
