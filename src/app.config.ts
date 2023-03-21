@@ -4,10 +4,10 @@ export default {
     'pages/user/index', // 个人中心
     'pages/addShop/index', // 添加商品
     'pages/infoList/index',
-    'pages/detail/index',
     'pages/demoComponents/index',
     'pages/cate/index',  // 分类
     'pages/detailGoods/index', // 商品详情
+    'pages/detail/index', // 商品详情 old
     'pages/index/index', // 首页 old
   ],
   window: {

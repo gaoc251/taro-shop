@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 3861688 */
-  src: url('//at.alicdn.com/t/c/font_3861688_30lx9aj1f6d.woff2?t=1679389767974') format('woff2'),
-       url('//at.alicdn.com/t/c/font_3861688_30lx9aj1f6d.woff?t=1679389767974') format('woff'),
-       url('//at.alicdn.com/t/c/font_3861688_30lx9aj1f6d.ttf?t=1679389767974') format('truetype');
+  src: url('//at.alicdn.com/t/c/font_3861688_rjgq8dpg5tq.woff2?t=1679392055488') format('woff2'),
+       url('//at.alicdn.com/t/c/font_3861688_rjgq8dpg5tq.woff?t=1679392055488') format('woff'),
+       url('//at.alicdn.com/t/c/font_3861688_rjgq8dpg5tq.ttf?t=1679392055488') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,26 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-taro-fenxiang1:before {
+  content: "\e600";
+}
+
+.icon-taro-shoucangxuanzhong:before {
+  content: "\e601";
+}
+
+.icon-taro-shoucang:before {
+  content: "\e602";
+}
+
+.icon-taro-iconfontgoumaihongbao:before {
+  content: "\e60c";
+}
+
+.icon-taro-goumai:before {
+  content: "\e8e1";
 }
 
 .icon-taro-wode:before {

@@ -7,6 +7,7 @@ import './index.scss'
 import InfoBase from '@/components/DetailGoods/InfoBase'
 import InfoParam from '@/components/DetailGoods/InfoParam'
 import HeaderImage from '@/components/DetailGoods/HeaderImage'
+import Footer from '@/components/DetailGoods/Footer'
 
 // 方法
 import { getWindowHeight } from '@/utils/style'
@@ -63,9 +64,7 @@ export default class DetailGoods extends Component {
           />
         </Popup> */}
 
-        {/* <View className='item__footer'>
-          <Footer onAdd={this.handleAdd} />
-        </View> */}
+        <Footer onAdd={this.handleAdd} />
       </View>
     )
   }
