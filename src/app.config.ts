@@ -1,6 +1,6 @@
 export default {
   pages: [
-    'pages/index/index',
+    'pages/home/index',
     'pages/user/index',
     'pages/addShop/index',
     'pages/infoList/index',
@@ -8,7 +8,7 @@ export default {
     'pages/demoComponents/index',
     'pages/cate/index',
     'pages/detailGoods/index',
-    'pages/home/index'
+    'pages/index/index',
   ],
   window: {
     backgroundTextStyle: 'light',
@@ -22,7 +22,7 @@ export default {
     backgroundColor: '#fff',
     borderStyle: 'white',
     list: [{
-      pagePath: 'pages/index/index',
+      pagePath: 'pages/home/index',
       text: '首页',
       iconPath: "./asset/image/home.png",
       selectedIconPath: "./asset/image/home_selected.png",
