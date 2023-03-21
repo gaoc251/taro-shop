@@ -1,14 +1,14 @@
 export default {
   pages: [
-    'pages/home/index',
-    'pages/user/index',
-    'pages/addShop/index',
+    'pages/home/index', // 首页
+    'pages/user/index', // 个人中心
+    'pages/addShop/index', // 添加商品
     'pages/infoList/index',
     'pages/detail/index',
     'pages/demoComponents/index',
-    'pages/cate/index',
-    'pages/detailGoods/index',
-    'pages/index/index',
+    'pages/cate/index',  // 分类
+    'pages/detailGoods/index', // 商品详情
+    'pages/index/index', // 首页 old
   ],
   window: {
     backgroundTextStyle: 'light',
@@ -18,7 +18,7 @@ export default {
   },
   tabBar: {
     color: 'rgba(0, 0, 0, 0.6)',
-    selectedColor: '#0281ff',
+    selectedColor: '#d81e06',
     backgroundColor: '#fff',
     borderStyle: 'white',
     list: [{
@@ -27,10 +27,10 @@ export default {
       iconPath: "./asset/image/home.png",
       selectedIconPath: "./asset/image/home_selected.png",
     },{
-      pagePath: 'pages/addShop/index',
-      text: '添加商品',
-      iconPath: "./asset/image/user.png",
-      selectedIconPath: "./asset/image/user_selected.png",
+      pagePath: 'pages/cate/index',
+      text: '分类',
+      iconPath: "./asset/image/cate.png",
+      selectedIconPath: "./asset/image/cate_selected.png",
     },{
       pagePath: 'pages/user/index',
       text: '我的',
@@ -40,8 +40,8 @@ export default {
     {
       pagePath: 'pages/demoComponents/index',
       text: '公共组件',
-      iconPath: "./asset/image/user.png",
-      selectedIconPath: "./asset/image/user_selected.png",
+      iconPath: "./asset/image/component.png",
+      selectedIconPath: "./asset/image/component_selected.png",
     }]
   },
 }

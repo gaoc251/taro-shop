@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 3861688 */
-  src: url('//at.alicdn.com/t/c/font_3861688_h90k6llgowu.woff2?t=1679389136110') format('woff2'),
-       url('//at.alicdn.com/t/c/font_3861688_h90k6llgowu.woff?t=1679389136110') format('woff'),
-       url('//at.alicdn.com/t/c/font_3861688_h90k6llgowu.ttf?t=1679389136110') format('truetype');
+  src: url('//at.alicdn.com/t/c/font_3861688_30lx9aj1f6d.woff2?t=1679389767974') format('woff2'),
+       url('//at.alicdn.com/t/c/font_3861688_30lx9aj1f6d.woff?t=1679389767974') format('woff'),
+       url('//at.alicdn.com/t/c/font_3861688_30lx9aj1f6d.ttf?t=1679389767974') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,18 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-taro-wode:before {
+  content: "\e62f";
+}
+
+.icon-taro-shouye1:before {
+  content: "\e62e";
+}
+
+.icon-taro-fenlei:before {
+  content: "\e630";
 }
 
 .icon-taro-bangzhu1:before {
