@@ -8,6 +8,7 @@ import InfoBase from '@/components/DetailGoods/InfoBase'
 import InfoParam from '@/components/DetailGoods/InfoParam'
 import HeaderImage from '@/components/DetailGoods/HeaderImage'
 import Footer from '@/components/DetailGoods/Footer'
+import ToolTipAddMyMp from '@/components/common/ToolTipAddMp'
 
 // 方法
 import { getWindowHeight } from '@/utils/style'
@@ -41,7 +42,8 @@ export default class DetailGoods extends Component {
     
     return (
       <View className='detail-goods'>
-       <ScrollView
+        <ToolTipAddMyMp />
+        <ScrollView
           scrollY
           className='item__wrap'
           style={{ height }}

@@ -1,0 +1,31 @@
+@import "../../../asset/style/theme.scss";
+
+.tooltip-addmp{    
+    position: fixed;
+    top: 10rpx;
+    right:40rpx;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(0 0 0 / 0.6);
+    color: #fff;
+    padding: 20rpx 30rpx;
+    border-radius: 10rpx;
+    &:before {
+        position: absolute;
+        content: "";
+        width: 0;
+        height: 0;
+        top: -10rpx;
+        left: 400rpx;
+        border-right: solid 10rpx transparent;
+        border-left: solid 10rpx transparent;
+        border-bottom: solid 10rpx rgb(0 0 0 / 0.6);;
+    }
+    &-del {
+        font-size: 31rpx;
+        color: #fff;
+        margin-left: 14rpx;
+    }
+}
