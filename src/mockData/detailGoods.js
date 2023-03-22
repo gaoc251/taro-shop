@@ -6,7 +6,7 @@ export default {
     "simpleDesc": "长绒棉100支 高支密 缎条 酒店风 四件套",
     "primaryPicUrl": "https://yanxuan-item.nosdn.127.net/eec03ac2d72511a7def3634a97483178.png",
     "imgList": [
-      "https://yanxuan-item.nosdn.127.net/1386e1cd00cb22cacd38e827b1947197.jpg",
+      "https://pic1.58cdn.com.cn/anjuke_58/b73afd4d32ab824497ddb71a074085b6?w=750&h=562&crop=1&w=696&h=522&crop=1&t=1&srotate=1",
       "https://yanxuan-item.nosdn.127.net/827b4573b699b9c6a33edc969979e01b.jpg",
       "https://yanxuan-item.nosdn.127.net/27553eecdc2647245399af9022bd179a.jpg",
       "https://yanxuan-item.nosdn.127.net/5718cb5ce75b2df5881cfc9ebc97887a.jpg",
