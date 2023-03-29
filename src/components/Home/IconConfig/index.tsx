@@ -20,6 +20,11 @@ export default class IconConfig extends Component<propType> {
             Taro.navigateTo({
                 url: `../../pages/cateSub/index?id=${item.id}&text=${item.text}`
             })
+        } else {
+            Taro.showToast({
+                title: '待开发',
+                icon: 'none'
+            })
         }
     }
 

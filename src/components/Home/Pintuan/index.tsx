@@ -26,7 +26,7 @@ export default class Pintuan extends Component<propType> {
         return (
             <View className='home-pin'>
                 <View className='home-pin__wrap'>
-                    <Title title='免邮拼团' link='#'/>
+                    <Title title='免邮拼团' />
                     <View className='home-pin__content'>
                         {list.map((item, index)=>{
                             return <View key={item.id} className='home-pin__item'onClick={this.handleClick.bind(this, item)}>

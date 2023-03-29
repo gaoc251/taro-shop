@@ -36,17 +36,14 @@ export default class Recommend extends Component<propType> {
                             className='home-recommend__list-item'
                             onClick={this.handleClick.bind(this, item)}>
                                 <Image className='home-recommend__list-item-img' src={categoryItem.listPicUrl} />
-                                {!!categoryItem.simpleDesc && !categoryItem.simpleDescClose &&
+                                {!!categoryItem.simpleDesc &&
                                     <Text className='home-recommend__list-item-desc' numberOfLines={1}>
                                         {categoryItem.simpleDesc}
                                     </Text>
                                 }
 
                                 <View className='home-recommend__list-item-info'>
-                                    {!!categoryItem.limitedTag &&
-                                        <Tag text={categoryItem.limitedTag} />
-                                    }
-
+                                    
                                     <Text className='home-recommend__list-item-name' numberOfLines={1}>
                                         {categoryItem.name}
                                     </Text>
