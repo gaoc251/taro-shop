@@ -6,6 +6,7 @@ export default {
     'pages/infoList/index',
     'pages/demoComponents/index',
     'pages/cate/index',  // 分类
+    'pages/cateSub/index',  // 二级分类
     'pages/detailGoods/index', // 商品详情
     'pages/detail/index', // 商品详情 old
     'pages/index/index', // 首页 old

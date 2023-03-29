@@ -16,9 +16,11 @@ export default class IconConfig extends Component<propType> {
     }
 
     handleClick = (item)=>{
-        Taro.navigateTo({
-            url: `../../pages/detailGoods/index?id=${item.id}`
-        })
+        if (item.id != 1) {
+            Taro.navigateTo({
+                url: `../../pages/cateSub/index?id=${item.id}&text=${item.text}`
+            })
+        }
     }
 
     render () {
@@ -27,7 +29,7 @@ export default class IconConfig extends Component<propType> {
         return (
             <View className='home-icon-config'>
                 { list && list.map(item => {
-                    return (<View className='home-icon-config__item'>
+                    return (<View className='home-icon-config__item' onClick={this.handleClick.bind(this, item)}>
                         <Image src={item.picUrl} className='home-icon-config__item-img'/>
                         <Text className='home-icon-config__item-txt'>{item.text}</Text>
                     </View>)

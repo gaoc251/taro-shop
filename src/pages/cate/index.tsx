@@ -49,7 +49,7 @@ export default class Cate extends Component {
   render() {
     const height = getWindowHeight()
     const { current, menu, loading, categoryList } = this.state
-    const currentCategory = categoryList.find(item => item.id === current) || {}
+    const currentCategory = categoryList.find((item:any) => item.id === current) || {}
 
     return (
       <View className='cate'>

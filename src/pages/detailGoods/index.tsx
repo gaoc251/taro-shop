@@ -36,6 +36,11 @@ export default class DetailGoods extends Component {
 
   componentDidHide() { }
 
+  // 购买
+  handleBuy () {
+    debugger
+  }
+
   render() {
     const height = getWindowHeight(false)
     const { itemInfo } = this.state
@@ -66,7 +71,7 @@ export default class DetailGoods extends Component {
           />
         </Popup> */}
 
-        <Footer onAdd={this.handleAdd} />
+        <Footer onAdd={this.handleBuy} />
       </View>
     )
   }

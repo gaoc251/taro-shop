@@ -5,6 +5,7 @@ import classNames from 'classnames'
 import './index.scss'
 
 interface propType {
+    onAdd: any
 }
 
 const navList = [
@@ -21,7 +22,8 @@ const navList = [
 
 export default class Footer extends Component<propType> {
     static defaultProps = {
-    }
+        onAdd: () => {}
+      }
 
     // 立即购买
     handleBuy () {
@@ -33,12 +35,11 @@ export default class Footer extends Component<propType> {
     }
 
     render () {
-        const {  } = this.props
         return (
             <View className='item-footer'>
                 {navList.map(nav => {
                     if (nav.key == 'buy') {
-                        return <View className='item-footer__btn item-footer__btn-buy' onClick={this.handleBuy}>{nav.text}</View>
+                        return <View className='item-footer__btn item-footer__btn-buy' onClick={this.props.onAdd}>{nav.text}</View>
                     } else {
                         return <View className='item-footer__btn'>
                             <View
