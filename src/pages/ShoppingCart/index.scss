@@ -1,0 +1,11 @@
+@import "../../asset/style/theme.scss";
+
+.cart {
+    &__not-login {
+        background: #ffffff;
+    }
+    &__login {
+        margin-top: -80px;
+        padding: 0 30px;
+    }
+}

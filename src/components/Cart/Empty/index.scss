@@ -1,0 +1,19 @@
+@import "../../../asset/style/theme.scss";
+
+.cart-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  padding: 140px 0 150px;
+  background: #ffffff;
+  &__img {
+    font-size: 260px;
+    color: moccasin;
+  }
+  &__txt {
+    color: $text-color-lighter;
+    font-size: 28px;
+    line-height: 28px;
+  }
+}

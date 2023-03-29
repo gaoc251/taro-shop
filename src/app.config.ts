@@ -8,6 +8,7 @@ export default {
     'pages/cate/index',  // 分类
     'pages/cateSub/index',  // 二级分类
     'pages/detailGoods/index', // 商品详情
+    'pages/ShoppingCart/index', // 购物车
     'pages/detail/index', // 商品详情 old
     'pages/index/index', // 首页 old
   ],
@@ -33,16 +34,23 @@ export default {
       iconPath: "./asset/image/cate.png",
       selectedIconPath: "./asset/image/cate_selected.png",
     },{
+      pagePath: 'pages/ShoppingCart/index',
+      text: '购物车',
+      iconPath: "./asset/image/cart.png",
+      selectedIconPath: "./asset/image/cart_selected.png",
+    },
+    {
       pagePath: 'pages/user/index',
       text: '我的',
       iconPath: "./asset/image/user.png",
       selectedIconPath: "./asset/image/user_selected.png",
-    },
-    {
-      pagePath: 'pages/demoComponents/index',
-      text: '公共组件',
-      iconPath: "./asset/image/component.png",
-      selectedIconPath: "./asset/image/component_selected.png",
-    }]
+    }
+    // {
+    //   pagePath: 'pages/demoComponents/index',
+    //   text: '公共组件',
+    //   iconPath: "./asset/image/component.png",
+    //   selectedIconPath: "./asset/image/component_selected.png",
+    // }
+    ]
   },
 }

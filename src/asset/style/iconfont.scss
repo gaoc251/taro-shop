@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 3861688 */
-  src: url('//at.alicdn.com/t/c/font_3861688_rjgq8dpg5tq.woff2?t=1679392055488') format('woff2'),
-       url('//at.alicdn.com/t/c/font_3861688_rjgq8dpg5tq.woff?t=1679392055488') format('woff'),
-       url('//at.alicdn.com/t/c/font_3861688_rjgq8dpg5tq.ttf?t=1679392055488') format('truetype');
+  src: url('//at.alicdn.com/t/c/font_3861688_3aycdfumqlw.woff2?t=1680079224727') format('woff2'),
+       url('//at.alicdn.com/t/c/font_3861688_3aycdfumqlw.woff?t=1680079224727') format('woff'),
+       url('//at.alicdn.com/t/c/font_3861688_3aycdfumqlw.ttf?t=1680079224727') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,14 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-taro-gouwuche:before {
+  content: "\e899";
+}
+
+.icon-taro-gouwuche1:before {
+  content: "\e672";
 }
 
 .icon-taro-fenxiang1:before {

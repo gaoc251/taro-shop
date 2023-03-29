@@ -11,8 +11,8 @@ export default {
         "name": "四件套",
         "frontName": "甄选品质，睡眠美学",
         "bannerUrl": "https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png",
-        "prettyBannerUrl": "https://yanxuan.nosdn.127.net/ed6400e5be573e1524cdef0b5c9e462d.png",
-        "superCategoryId": 1005000
+        "prettyBannerUrl": "https://yanxuan.nosdn.127.net/ed6400e5be573e1524cdef0b5c9e462d.png", // 不需要
+        "superCategoryId": 1005000 // 父级ID
       }, {
         "id": 109323008,
         "name": "四季款",
