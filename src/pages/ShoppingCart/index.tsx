@@ -9,6 +9,7 @@ import Empty from '@/components/Cart/Empty'
 import ButtonItem from '@/components/common/ButtonItem'
 
 // 方法
+import {handleLogin} from "@/utils/util"
 
 export default class ShoppingCart extends Component {
 
@@ -35,7 +36,9 @@ export default class ShoppingCart extends Component {
   componentDidHide() { }
 
   toLogin = () => {
-    debugger
+    handleLogin((userInfo)=>{
+      console.log("userInfo", userInfo)
+    })
   }
 
   render() {

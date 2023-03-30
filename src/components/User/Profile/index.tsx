@@ -5,6 +5,8 @@ import Taro from '@tarojs/taro'
 import classNames from 'classnames'
 import './index.scss'
 
+import {handleLogin} from "@/utils/util"
+
 interface stateType {
     userInfo: {
         avatarUrl: string
@@ -36,39 +38,10 @@ export default class Profile extends Component<any, stateType> {
     // 触发登录事件
     handleLogin () {
         let self = this
-        Taro.getSetting({
-            success (res) {
-                const { authSetting } = res
-                console.log(res.authSetting)
-                if (authSetting['scope.userInfo']) {
-                    self.getUserProfile()
-                } else {
-                    Taro.authorize({
-                        scope: 'scope.userInfo',
-                        success () {
-                            console.log("授权成功")
-                            self.getUserProfile()
-                        }
-                    })
-                }
-            }
-        })
-    }
-
-    getUserProfile () {
-        let self = this
-        Taro.getUserProfile({
-            desc: '请先授权登录', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
-            success: (res) => {
-                console.log("getUserProfile", res)
-                Taro.setStorage({
-                    key: "userInfo",
-                    data: res.userInfo
-                })
-                self.setState ({
-                    userInfo: res.userInfo
-                })
-            }
+        handleLogin ((userInfo) => {
+            self.setState ({
+                userInfo
+            })
         })
     }
 
