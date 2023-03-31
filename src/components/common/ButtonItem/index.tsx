@@ -5,7 +5,19 @@ import classNames from 'classnames'
 
 import { postcss } from '@/utils/style'
 
-export default class ButtonItem extends Component {
+interface ReactPropTypes {
+  compStyle: object
+  type: string
+  plain: boolean
+  disabled: boolean
+  textStyle: string
+  openType: string
+  loading: boolean
+  text: string
+  onClick: any
+  onGetUserInfo: any
+}
+export default class ButtonItem extends Component<ReactPropTypes, any> {
 
   static defaultProps = {
     compStyle: '',

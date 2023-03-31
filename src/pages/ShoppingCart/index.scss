@@ -1,6 +1,9 @@
 @import "../../asset/style/theme.scss";
 
 .cart {
+    background-color: #F4F4F4;
+    height: 100vh;
+
     &__not-login {
         background: #ffffff;
     }

@@ -3,7 +3,10 @@ import { View, Text, Image } from '@tarojs/components'
 
 import './index.scss'
 
-export default class Empty extends Component {
+interface propsType {
+  text?: string
+}
+export default class Empty extends Component<propsType, any> {
   render () {
     return (
       <View className='cart-empty'>

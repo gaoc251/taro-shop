@@ -27,10 +27,12 @@ function getUserProfile (cb) {
    Taro.getUserProfile({
        desc: '请先授权登录', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
        success: (res) => {
+        debugger
            Taro.setStorage({
                key: "userInfo",
                data: res.userInfo
            })
+           
            cb(res.userInfo)
        }
    })

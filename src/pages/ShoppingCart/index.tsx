@@ -7,17 +7,28 @@ import Taro from '@tarojs/taro'
 // 组件
 import Empty from '@/components/Cart/Empty'
 import ButtonItem from '@/components/common/ButtonItem'
+import CartList from '@/components/Cart/List'
 
 // 方法
 import {handleLogin} from "@/utils/util"
+import { getCartInfo } from "./lib/getCartInfo"
 
 export default class ShoppingCart extends Component {
 
   state = {
     loginState: false, // 登录态
-    cartInfo: [], // 购物车
+    cartGroupList: [], // 购物车
+    cartLimitList: [], // 失效商品
+    priceDetailBanner: {}, // 底部价格详情
   }
-  componentWillMount() {}
+  componentWillMount() {
+    //获取openID ,先写个假的吧
+    const cartInfo = getCartInfo ("11111")
+    const { cartGroupList, cartLimitList, priceDetailBanner } = cartInfo
+    this.setState({
+      cartGroupList, cartLimitList, priceDetailBanner
+    })
+  }
 
   componentDidMount() {
     // 
@@ -43,11 +54,15 @@ export default class ShoppingCart extends Component {
 
   render() {
 
-    const { loginState, cartInfo } = this.state
+    const { loginState, cartGroupList } = this.state
+   
     return (
       <View className='cart'>
-        {loginState && cartInfo.length == 0 && <Empty />}
-        {loginState && cartInfo.length != 0 && <View>已登录-展示购物车吧</View>}
+        {loginState && cartGroupList.length == 0 && <Empty />}
+        {loginState && cartGroupList.length != 0 && <View>
+          已登录-展示购物车吧
+          <CartList list={cartGroupList}/>
+        </View>}
 
         {!loginState && <View className='cart__not-login'>
           <Empty text='未登陆' />
