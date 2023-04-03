@@ -24,7 +24,7 @@ export default {
                                     "specName": "规格",
                                     "specValue": "原味 2.6千克"
                                 },
-                                "SpecValueList": [
+                                "specValueList": [
                                     {
                                         "id": 3827106,
                                         "skuSpecId": 1458034,

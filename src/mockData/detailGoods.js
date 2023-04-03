@@ -11,6 +11,77 @@ export default {
       "https://yanxuan-item.nosdn.127.net/27553eecdc2647245399af9022bd179a.jpg",
       "https://yanxuan-item.nosdn.127.net/5718cb5ce75b2df5881cfc9ebc97887a.jpg",
       "https://yanxuan-item.nosdn.127.net/2c74266b2f6091cf041d855935b23c9f.jpg"],
+    "attrList": [{
+        "attrName": "面料",
+        "attrValue": "全棉"
+      }, {
+        "attrName": "适用年龄",
+        "attrValue": "3岁以上"
+      }, {
+        "attrName": "适用季节",
+        "attrValue": "四季"
+      }, {
+        "attrName": "款式",
+        "attrValue": "床单式"
+      }, {
+        "attrName": "工艺",
+        "attrValue": "提花"
+      }, {
+        "attrName": "风格",
+        "attrValue": "现代简约"
+      }, {
+        "attrName": "图案",
+        "attrValue": "纯色"
+      }, {
+        "attrName": "材质",
+        "attrValue": "全棉"
+      }, {
+        "attrName": "适用床尺寸",
+        "attrValue": "1.5m、1.8m"
+      }, {
+        "attrName": "商品清单",
+        "attrValue": "四件套：枕套*2，被套*1，床单*1"
+      }],
+    "itemStar": {
+      "goodCmtRate": "90",
+      "star": null
+    },
+    "specList": [{
+      "id": 3927455,
+      "name": "颜色",
+      "type": 1,
+      "specValueList": [{
+        "id": 4351947,
+        "skuSpecId": 3927455,
+        "picUrl": "https://yanxuan-item.nosdn.127.net/881427bee88780dc2ef5940bb221b056.jpg",
+        "value": "咖色"
+      }, {
+        "id": 4351948,
+        "skuSpecId": 3927455,
+        "picUrl": "https://yanxuan-item.nosdn.127.net/f93a6e769d9b6734376607c05bbaec27.jpg",
+        "value": "蓝色"
+      }, {
+        "id": 4351949,
+        "skuSpecId": 3927455,
+        "picUrl": "https://yanxuan-item.nosdn.127.net/209b8eafbe6545c6aaab807d2127dad9.jpg",
+        "value": "拼接"
+      }]
+    }, {
+      "id": 3927456,
+      "name": "尺码",
+      "type": 0,
+      "skuSpecValueList": [{
+        "id": 4351950,
+        "skuSpecId": 3927456,
+        "picUrl": null,
+        "value": "1.5米床"
+      }, {
+        "id": 4351951,
+        "skuSpecId": 3927456,
+        "picUrl": null,
+        "value": "1.8米床"
+      }]
+    }],
     "primarySkuId": 300755360,
     "floorPrice": null,
     "ceilingPrice": 0,
@@ -18,37 +89,6 @@ export default {
     "soldOut": false,
     "underShelf": false,
     "updateTime": 1668997438363,
-    "attrList": [{
-      "attrName": "面料",
-      "attrValue": "全棉"
-    }, {
-      "attrName": "适用年龄",
-      "attrValue": "3岁以上"
-    }, {
-      "attrName": "适用季节",
-      "attrValue": "四季"
-    }, {
-      "attrName": "款式",
-      "attrValue": "床单式"
-    }, {
-      "attrName": "工艺",
-      "attrValue": "提花"
-    }, {
-      "attrName": "风格",
-      "attrValue": "现代简约"
-    }, {
-      "attrName": "图案",
-      "attrValue": "纯色"
-    }, {
-      "attrName": "材质",
-      "attrValue": "全棉"
-    }, {
-      "attrName": "适用床尺寸",
-      "attrValue": "1.5m、1.8m"
-    }, {
-      "attrName": "商品清单",
-      "attrValue": "四件套：枕套*2，被套*1，床单*1"
-    }],
     "skuMap": {
       "4351947;4351950": {
         "id": 300755358,
@@ -890,42 +930,6 @@ export default {
         "subsidyBanner": null
       }
     },
-    "skuSpecList": [{
-      "id": 3927455,
-      "name": "颜色",
-      "type": 1,
-      "skuSpecValueList": [{
-        "id": 4351947,
-        "skuSpecId": 3927455,
-        "picUrl": "https://yanxuan-item.nosdn.127.net/881427bee88780dc2ef5940bb221b056.jpg",
-        "value": "咖色"
-      }, {
-        "id": 4351948,
-        "skuSpecId": 3927455,
-        "picUrl": "https://yanxuan-item.nosdn.127.net/f93a6e769d9b6734376607c05bbaec27.jpg",
-        "value": "蓝色"
-      }, {
-        "id": 4351949,
-        "skuSpecId": 3927455,
-        "picUrl": "https://yanxuan-item.nosdn.127.net/209b8eafbe6545c6aaab807d2127dad9.jpg",
-        "value": "拼接"
-      }]
-    }, {
-      "id": 3927456,
-      "name": "尺码",
-      "type": 0,
-      "skuSpecValueList": [{
-        "id": 4351950,
-        "skuSpecId": 3927456,
-        "picUrl": null,
-        "value": "1.5米床"
-      }, {
-        "id": 4351951,
-        "skuSpecId": 3927456,
-        "picUrl": null,
-        "value": "1.8米床"
-      }]
-    }],
     "skuMaxCount": 99,
     "comments": [],
     "extraPrice": "",
@@ -1138,10 +1142,6 @@ export default {
     "defaultSelectSkuId": 300755360,
     "retailPrice": "769",
     "activityPrice": "489",
-    "itemStar": {
-      "goodCmtRate": "90",
-      "star": null
-    },
     "pointsTip": "购买最高得63积分",
     "itemSizeTableFlag": false,
     "scheduleDeliveryStatus": 0,
