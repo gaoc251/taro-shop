@@ -56,7 +56,6 @@ export default class DetailGoods extends Component {
 
   // 选择的型号
   handleSelect (selected) {
-    debugger
     this.setState({selected})
   }
 
@@ -78,7 +77,7 @@ export default class DetailGoods extends Component {
         </ScrollView>
 
         <Popup visible={visible} onClose={this.toggleVisible}>
-          <SpecList specList={itemInfo.specList} primaryPicUrl={itemInfo.primaryPicUrl} activityPrice={itemInfo.activityPrice} retailPrice={itemInfo.retailPrice} selected={this.state.selected} onSelect={this.handleSelect}/>
+          <SpecList specList={itemInfo.specList} primaryPicUrl={itemInfo.primaryPicUrl} activityPrice={itemInfo.activityPrice} retailPrice={itemInfo.retailPrice} skuMap={itemInfo.skuMap} selected={this.state.selected} onSelect={this.handleSelect.bind(this)}/>
         </Popup>
 
         {/* NOTE Popup 一般的实现是 fixed 定位，但 RN 不支持，只能用 absolute，要注意引入位置 */}

@@ -70,7 +70,7 @@ export default {
       "id": 3927456,
       "name": "尺码",
       "type": 0,
-      "skuSpecValueList": [{
+      "specValueList": [{
         "id": 4351950,
         "skuSpecId": 3927456,
         "picUrl": null,
@@ -82,13 +82,6 @@ export default {
         "value": "1.8米床"
       }]
     }],
-    "primarySkuId": 300755360,
-    "floorPrice": null,
-    "ceilingPrice": 0,
-    "status": 2,
-    "soldOut": false,
-    "underShelf": false,
-    "updateTime": 1668997438363,
     "skuMap": {
       "4351947;4351950": {
         "id": 300755358,
@@ -930,6 +923,13 @@ export default {
         "subsidyBanner": null
       }
     },
+    "primarySkuId": 300755360,
+    "floorPrice": null,
+    "ceilingPrice": 0,
+    "status": 2,
+    "soldOut": false,
+    "underShelf": false,
+    "updateTime": 1668997438363,
     "skuMaxCount": 99,
     "comments": [],
     "extraPrice": "",

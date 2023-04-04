@@ -1,0 +1,51 @@
+@import "../../../asset/style/theme.scss";
+
+.comp-input-number {
+    display: flex;
+    flex-direction: row;
+    height: 52px;
+
+    &__minus,
+    &__plus {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 84px;
+        height: 100%;
+        border: 1px solid #7f7f7f;
+        @include hairline(border-width);
+        border-left-width: 0;
+        border-radius: 0 $border-radius $border-radius 0;
+
+        .icon {
+            font-size: 30px;
+        }
+    }
+
+    &__minus {
+        @include hairline(border-left-width);
+        border-right-width: 0;
+        border-radius: $border-radius 0 0 $border-radius;
+      
+        &--disabled {
+          border-color: #cccccc;
+        }
+    }
+
+    &__num {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 76px;
+        height: 100%;
+        border: 1px solid #7f7f7f;
+      
+        &-txt {
+            color: $text-color;
+            font-size: 24px;
+            line-height: 24px;
+        }
+    }
+}

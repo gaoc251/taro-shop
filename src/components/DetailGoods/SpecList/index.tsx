@@ -4,12 +4,14 @@ import { View, Image, Text } from '@tarojs/components'
 import './index.scss'
 import classNames from 'classnames'
 
+import InputNumber from '@/components/common/InputNumber'
 interface propsType {
     specList: Array<any>
     selected: object
     primaryPicUrl: string
     activityPrice: string
     retailPrice: string
+    skuMap: Array<any>
     onSelect: any
 }
 
@@ -20,6 +22,7 @@ export default class SpecList extends Component<propsType,any> {
         primaryPicUrl: '',
         activityPrice: '',
         retailPrice: '',
+        skuMap: [],
         onSelect: () => {}
     }
 
@@ -30,12 +33,12 @@ export default class SpecList extends Component<propsType,any> {
     }
 
     isValid = item => {
-        // const { data: { skuMap = {}, skuSpecList = [] } } = this.props
-        // if (skuSpecList.length > 1) {
-        //   return true
-        // }
+        const { skuMap = {}, specList = [] } = this.props
+        if (specList.length > 1) {
+          return true
+        }
     
-        // return skuMap[item.id] ? skuMap[item.id].sellVolume : false
+        return skuMap[item.id] ? skuMap[item.id].sellVolume : false
     }
 
     isSelected = (item, groupId) => this.state.selected[groupId] === item.id
@@ -56,10 +59,13 @@ export default class SpecList extends Component<propsType,any> {
         }
     }
 
+    handleUpdate (cnt) {
+        this.setState({ cnt })
+    }
+
     render(): ReactNode {
         const { specList, primaryPicUrl, activityPrice, retailPrice } = this.props
 
-        console.log("specList", specList)
         return (
             <View className='item-spec'>
                 <View className='item-spec__info'>
@@ -82,35 +88,30 @@ export default class SpecList extends Component<propsType,any> {
 
                 { specList.map((group:any) => {
                     const specList = group.specValueList
-                    console.log("specList",specList)
                     return <View key={group.id} className='item-spec__group'>
                         <Text className='item-spec__group-title'>{group.name}</Text>
                         <View className='item-spec__group-list'>
-                            {specList.map(item => {
-                                debugger
-                                return <View>{item.id}</View>
-                            })}
-                            {/* { group.specValueList.map(item => (
-                                <Text
-                                key={item.id}
-                                className={classNames('item-spec__group-list-item', {
-                                    'item-spec__group-list-item--active': this.isSelected(item, group.id),
-                                    'item-spec__group-list-item--disabled': !this.isValid(item)
-                                })}
-                                onClick={this.handleSelect.bind(this, item, group.id)}
+                            { specList && specList.map(item => {
+                                return <Text
+                                    key={item.id}
+                                    className={classNames('item-spec__group-list-item', {
+                                        'item-spec__group-list-item--active': this.isSelected(item, group.id),
+                                        'item-spec__group-list-item--disabled': !this.isValid(item)
+                                    })}
+                                    onClick={this.handleSelect.bind(this, item, group.id)}
                                 >
-                                {item.value}
+                                    {item.value}
                                 </Text>
-                            ))} */}
+                            })}
                         </View>
                     </View>
                 })}
 
                 <View className='item-spec__group'>
                     <Text className='item-spec__group-title'>数量</Text>
-                    {/* <InputNumber
+                    <InputNumber
                         num={this.state.cnt}
-                        onChange={this.handleUpdate}
+                        onChange={this.handleUpdate.bind(this)}
                         compStyle={{
                         marginTop: Taro.pxTransform(20),
                         height: Taro.pxTransform(68)
@@ -118,7 +119,7 @@ export default class SpecList extends Component<propsType,any> {
                         numStyle={{
                         width: Taro.pxTransform(130)
                         }}
-                    /> */}
+                    />
                  </View>
 
             </View>

@@ -13,7 +13,7 @@
 
     // NOTE RN 没有 display: none，暂时用 height 实现同等效果
     &--visible {
-        height: 100%;
+        height: calc(100% - 100px);
     }
     &__mask {
         flex: 1;
