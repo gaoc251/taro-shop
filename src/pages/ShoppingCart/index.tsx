@@ -52,6 +52,21 @@ export default class ShoppingCart extends Component {
     })
   }
 
+  // 更新 checkbox 选中状态
+  dispatchUpdateCheck = (params, isAll) =>{
+    // 请求接口待开发
+    console.log("params", params, isAll)
+    if (isAll) {
+      let _cartGroupList = this.state.cartGroupList
+      _cartGroupList[0].checked = params.skuList[0].checked
+      this.setState({
+        _cartGroupList
+      })
+    } else {
+      debugger
+    }
+  }
+
   render() {
 
     const { loginState, cartGroupList } = this.state
@@ -60,8 +75,7 @@ export default class ShoppingCart extends Component {
       <View className='cart'>
         {loginState && cartGroupList.length == 0 && <Empty />}
         {loginState && cartGroupList.length != 0 && <View>
-          已登录-展示购物车吧
-          <CartList list={cartGroupList}/>
+          <CartList list={cartGroupList} onUpdateCheck={this.dispatchUpdateCheck}/>
         </View>}
 
         {!loginState && <View className='cart__not-login'>

@@ -1,14 +1,12 @@
 @import "../../../asset/style/theme.scss";
 
 .cart-list {
-    margin-top: 20px;
-
+    padding: 20rpx;
     &-group {
       width: 700px;
       background: #ffffff;
       border-radius: 20px;
       overflow: hidden;
-      margin: 20px;
     }
 
     &-group__header {
@@ -20,6 +18,7 @@
         font-size: 32px;
         font-weight: 700;
         color: #333;
+        margin-left: 16px;
       }
       &-tip {
         flex: 1;

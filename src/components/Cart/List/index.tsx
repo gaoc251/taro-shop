@@ -4,6 +4,7 @@ import { View } from '@tarojs/components'
 import './index.scss'
 
 import CartListTtem from '../ListItem/index'
+import CheckboxItem from '@/components/common/CheckboxItem'
 
 interface propsType {
   list: [{
@@ -11,10 +12,21 @@ interface propsType {
     groupTip: string
     checked: boolean
     promotionGroupList: []
+    onUpdateCheck: any
   }]
 }
 
 export default class CartList extends Component<propsType, any> {
+
+    handleUpdateCheck = (item) => {
+
+      const payload = {
+        skuList: [{ ...item, checked: !item.checked }]
+      }
+
+      this.props.onUpdateCheck(payload, true)
+    }
+
     render () {
         const { list } = this.props
         return (
@@ -22,6 +34,10 @@ export default class CartList extends Component<propsType, any> {
                 { list.map((item: any) => {
                     return <View className='cart-list-group'>
                         <View className='cart-list-group__header'>
+                            <CheckboxItem
+                              checked={item.checked}
+                              onClick={this.handleUpdateCheck.bind(this, item)}
+                            />
                             <View className='cart-list-group__header-tilte'>{item.groupTitle}</View>
                             <View className='cart-list-group__header-tip'>{item.groupTip}</View>
                             <View className='cart-list-group__header-gotip'>{item.toGoTip}</View>
@@ -29,7 +45,7 @@ export default class CartList extends Component<propsType, any> {
                         { item.promotionGroupList && item.promotionGroupList.map((cartItem: any) => {
                             return <View className='cart-list-group__item'>
                               {cartItem.cartItemList && cartItem.cartItemList.map((shopItem: any)=>{
-                                return <CartListTtem shopItem={shopItem}/>
+                                return <CartListTtem shopItem={shopItem} onUpdateItemCheck={this.props.onUpdateCheck}/>
                               })}
                             </View>
                         })}

@@ -32,7 +32,10 @@ interface propsType {
 export default class CartListTtem extends Component<propsType, any> {
 
     handleUpdateCheck (shopItem) {
-      debugger
+      const payload = {
+        skuList: [{ ...shopItem, checked: !shopItem.checked }]
+      }
+      this.props.onUpdateItemCheck(payload, false)
     }
 
     render () {

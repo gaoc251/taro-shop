@@ -42,8 +42,45 @@ export default class DetailGoods extends Component {
 
   // 购买
   handleBuy () {
-    const { visible } = this.state
-    this.toggleVisible()
+    const { itemInfo, visible, selected } = this.state
+    const { specList } = itemInfo
+
+    const isSelected = visible && !!selected.id && itemInfo.skuMap[selected.id]
+    const isSingleSpec = specList.every(spec => spec.specValueList.length === 1)
+
+    if (isSelected || isSingleSpec) {
+      const selectedItem = isSelected ? selected : {
+        id: specList.map(spec => spec.skuSpecValueList[0].id).join(';'),
+        cnt: 1
+      }
+      const skuItem = itemInfo.skuMap[selectedItem.id] || {}
+      const payload = {
+        skuId: skuItem.id,
+        cnt: selectedItem.cnt
+      }
+      // 请求接口，加入成功
+      Taro.showToast({
+        title: '加入购物车成功',
+        icon: 'none'
+      })
+
+      if (isSelected) {
+        this.toggleVisible()
+      }
+      return
+    }
+    
+
+    if (!visible) {
+      this.setState({ visible: true })
+    } else {
+      // XXX 加购物车逻辑不一定准确
+      Taro.showToast({
+        title: '请选择规格（或换个商品测试）',
+        icon: 'none'
+      })
+    }
+
   }
 
   // 购买窗口关闭事件
