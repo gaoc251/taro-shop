@@ -53,29 +53,43 @@ export default class ShoppingCart extends Component {
   }
 
   // 更新 checkbox 选中状态
-  dispatchUpdateCheck = (params, isAll) =>{
+  dispatchUpdateCheck (params, isAll) {
     // 请求接口待开发
     console.log("params", params, isAll)
+    let _cartGroupList = this.state.cartGroupList
     if (isAll) {
-      let _cartGroupList = this.state.cartGroupList
+      
       _cartGroupList[0].checked = params.skuList[0].checked
       this.setState({
         _cartGroupList
       })
     } else {
-      debugger
+      let _promotionGroupList = _cartGroupList[0].promotionGroupList
+      
+      let _id = params.skuList[0].id
+      for (var item of _promotionGroupList) {
+        if (item.cartItemList[0].id == _id) {
+          item.cartItemList[0].checked = params.skuList[0].checked
+        }
+      }
+      this.setState({_cartGroupList})
     }
   }
 
   render() {
 
-    const { loginState, cartGroupList } = this.state
+    const { loginState, cartGroupList, cartLimitList } = this.state
+
+    console.log("cartGroupList", cartGroupList)
+    console.log("cartLimitList", cartLimitList)
    
     return (
       <View className='cart'>
         {loginState && cartGroupList.length == 0 && <Empty />}
         {loginState && cartGroupList.length != 0 && <View>
-          <CartList list={cartGroupList} onUpdateCheck={this.dispatchUpdateCheck}/>
+          <CartList list={cartGroupList} onUpdateCheck={this.dispatchUpdateCheck.bind(this)}/>
+
+          {cartLimitList && <CartList list={cartLimitList} />}
         </View>}
 
         {!loginState && <View className='cart__not-login'>

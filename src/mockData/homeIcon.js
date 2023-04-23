@@ -2,7 +2,8 @@ export default {
     code: 0,
     message: 'ok',
     data: {
-        icons: [{
+        icons: [
+            {
                 "text": "房屋出租",
                 "imgUrl": "https://pic6.ajkimg.com/news/55985a5eaa5170f5f9b2ca15709856c0?imageMogr2/format/jpg/thumbnail/132x132",
                 "jumpAction": "../../pages/infoList/index?type=houseRent",
@@ -31,7 +32,8 @@ export default {
                 "imgUrl": "https://pic6.ajkimg.com/news/55985a5eaa5170f5f9b2ca15709856c0?imageMogr2/format/jpg/thumbnail/132x132",
                 "jumpAction": "../../pages/infoList/index?type=contactUs",
                 bgColor: '#A3C869'
-            }],
+            }
+        ],
         headImages: [
             'https://i.postimg.cc/qM9yJXzk/image.png'
             // 'https://chuantu.xyz/t6/742/1665479804x2890211636.png',

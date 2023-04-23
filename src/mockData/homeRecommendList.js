@@ -166,26 +166,11 @@ export default {
                             "https://yanxuan.nosdn.127.net/93b808052dbc095c37aee08450fade97.jpg?watermark&type=2&gravity=southeast&dissolve=80&font=c2ltZmFuZw==&fontsize=400&fontcolor=d2hpdGU=&text=eXgxNjI4MTA5OTQ=",
                             "https://yanxuan.nosdn.127.net/e7ab0d1c73bf7ea8eac253780953d66e.jpg?watermark&type=2&gravity=southeast&dissolve=80&font=c2ltZmFuZw==&fontsize=400&fontcolor=d2hpdGU=&text=eXgxNjI4MTA5OTQ="
                         ],
-                        
-                    
-                        
                         "userId": 26240296551
                     }
                 ],
                 "commentCount": "27万+评价",
-                
-                
-                
-                
-                
-                
-                
-                
                 "salePointDesc": null,
-                
-                
-               
-                
             },
             "categoryItemId": 0,
             

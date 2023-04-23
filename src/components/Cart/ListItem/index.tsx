@@ -4,6 +4,7 @@ import { View, Text, Image } from '@tarojs/components'
 import './index.scss'
 
 import CheckboxItem from "@/components/common/CheckboxItem"
+import InputNumber from '@/components/common/InputNumber'
 
 interface propsType {
   shopItem: {
@@ -38,11 +39,16 @@ export default class CartListTtem extends Component<propsType, any> {
       this.props.onUpdateItemCheck(payload, false)
     }
 
+    handleUpdate () {
+      debugger
+    }
+
     render () {
         const { shopItem } = this.props
+        console.log("shopItem", shopItem)
         return (
             <View className='cart-list__item'>
-                <CheckboxItem checked={shopItem.checked} onClick={this.handleUpdateCheck.bind(this, shopItem)}/>
+                { shopItem.status == 2 && <CheckboxItem checked={shopItem.checked} onClick={this.handleUpdateCheck.bind(this, shopItem)}/>}
                 <Image className='cart-list__item-img'src={shopItem.pic}/>
                 <View className='cart-list__item-info'>
                     <View className='cart-list__item-title'>
@@ -65,10 +71,10 @@ export default class CartListTtem extends Component<propsType, any> {
                             ¥{shopItem.actualPrice}
                         </Text>
                         <View className='cart-list__item-num'>
-                            {/* <InputNumber
+                            <InputNumber
                               num={shopItem.cnt}
                               onChange={this.handleUpdate.bind(this, shopItem)}
-                            /> */}
+                            />
                         </View>
                     </View>
 

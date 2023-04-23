@@ -29,11 +29,13 @@ export default class CartList extends Component<propsType, any> {
 
     render () {
         const { list } = this.props
+        
         return (
             <View className='cart-list'>
                 { list.map((item: any) => {
+                  console.log("item", item)
                     return <View className='cart-list-group'>
-                        <View className='cart-list-group__header'>
+                        { item.groupTitle && <View className='cart-list-group__header'>
                             <CheckboxItem
                               checked={item.checked}
                               onClick={this.handleUpdateCheck.bind(this, item)}
@@ -41,14 +43,12 @@ export default class CartList extends Component<propsType, any> {
                             <View className='cart-list-group__header-tilte'>{item.groupTitle}</View>
                             <View className='cart-list-group__header-tip'>{item.groupTip}</View>
                             <View className='cart-list-group__header-gotip'>{item.toGoTip}</View>
-                        </View>
+                        </View>}
                         { item.promotionGroupList && item.promotionGroupList.map((cartItem: any) => {
-                            return <View className='cart-list-group__item'>
-                              {cartItem.cartItemList && cartItem.cartItemList.map((shopItem: any)=>{
-                                return <CartListTtem shopItem={shopItem} onUpdateItemCheck={this.props.onUpdateCheck}/>
-                              })}
-                            </View>
+                          console.log("cartItem", cartItem)
+                            return <CartListTtem shopItem={cartItem} onUpdateItemCheck={this.props.onUpdateCheck}/>
                         })}
+                        { item.status == 1 && <CartListTtem shopItem={item} onUpdateItemCheck={this.props.onUpdateCheck}/>}
                     </View>
                 })}
             </View>
